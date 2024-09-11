@@ -22,6 +22,15 @@ Your alarm will expire at 3.
 
 def main():
     # YOUR CODE HERE
-
+    print('What hour is it right now in military time? ')
+    hour_now: int = int(input())
+    print('How long in hours until your alarm expires? ')
+    expire_time: int = int(input())
+    alarm = (hour_now + expire_time) % 24
+    if (hour_now + expire_time >= 24):
+        days_passed = (hour_now + expire_time) // 24
+        print(f'your alarm will will go off at {alarm}:00 military time, {days_passed} day(s) from now')    
+        return
+    print(f'your alarm will will go off at {alarm}')
 if __name__ == '__main__':
     main()
